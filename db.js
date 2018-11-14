@@ -2,11 +2,14 @@
 
 const Sequelize = require('sequelize');  
 
-const sequelize = new Sequelize('carbooking', 'root', 'root', {
-  host: "localhost",
-  dialect : 'mysql',
-  port: 3308,
-})
+const sequelize = new Sequelize({
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
+  dialect: 'mysql'
+});
 
 // Connect all the models/tables in the database to a db object, 
 //so everything is accessible via one object
