@@ -18,7 +18,23 @@ exports.getAll = function(req, res){
 };
 
 exports.create = function(req, res){
-
+	db.bookings.create({
+		transactionId: req.body.transactionId,
+		dropLocation: req.body.dropLocation,
+		pickLocation: req.body.pickLocation,
+		dropTime: req.body.dropTime,
+		pickTime: req.body.pickTime,
+		fare: req.body.fare,
+		additionalFee: req.body.additionalFee,
+		discount: req.body.discount,
+		totalAmount: req.body.totalAmount,
+		createdAt: Date.now(),
+	}).then(booking => {
+		res.json({
+			"status": "success",
+			"data": booking,
+		});
+	});
 }
 
 exports.find = function(req, res) {

@@ -1,12 +1,13 @@
-'use strict'
+'use strict';
 
 const Sequelize = require('sequelize');  
 
-const sequelize = new Sequelize('carbooking', 'root', 'root', {
+const sequelize = new Sequelize('carbooking', 'root', '', {
   host: "localhost",
   dialect : 'mysql',
-  port: 3308,
-})
+  port: 3306,
+  operatorsAliases: false
+});
 
 // Connect all the models/tables in the database to a db object, 
 //so everything is accessible via one object

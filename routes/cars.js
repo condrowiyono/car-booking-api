@@ -6,7 +6,7 @@ var serviceBase = "http://localhost:3000/api/v1/";
 
 router.get('/', function(req, res, next) {
 	//get data from partner
-	var pick = req.query.pick
+	var pick = req.query.pick;
 	var date = moment(req.query.date).format('YYYY-MM-DD HH:mm:ss');
 	var uri = serviceBase + "cars?pick=" + pick + "&date=" + date;
 	axios.get(uri)

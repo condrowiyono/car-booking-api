@@ -30,7 +30,7 @@ module.exports = (sequelize, Sequelize) => {
     type: Sequelize.INTEGER,
     field: 'total_amount'
   },
-  'exipiredTime': {
+  'expiredTime': {
     type: Sequelize.DATE,
     field: 'expired_time',
   },
